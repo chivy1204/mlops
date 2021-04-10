@@ -10,8 +10,8 @@ def _preprocess_data():
      data.drop(columns=["label"])
      X = np.array(data)
      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4)
-     X_train1, X_train2, y_train1, y_train2 = train_test_split(X, y, test_size=0.01)
-     X_train1, X_temp, y_train1, y_temp = train_test_split(X, y, test_size=0.8)
+     X_train1, X_train2, y_train1, y_train2 = train_test_split(X_train, y_train, test_size=0.01)
+     X_train1, X_temp, y_train1, y_temp = train_test_split(X_train1, y_train1, test_size=0.8)
      for i in range(len(y_train2)):
           if y_train2[i] == 0:
                y_train2[i] = 1
