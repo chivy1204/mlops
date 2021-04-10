@@ -12,6 +12,11 @@ def _preprocess_data():
      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4)
      X_train1, X_train2, y_train1, y_train2 = train_test_split(X, y, test_size=0.01)
      X_train1, X_temp, y_train1, y_temp = train_test_split(X, y, test_size=0.8)
+     for i in range(len(y_train2)):
+          if y_train2[i] == 0:
+               y_train2[i] = 1
+          else:
+               y_train2[i] = 0
      np.save('x_train1.npy', X_train1)
      np.save('x_test.npy', X_test)
      np.save('y_train1.npy', y_train1)
